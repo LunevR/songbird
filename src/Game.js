@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header/Header';
+import Question from './components/Question/Question';
 import './Game.css';
 
 function Game() {
@@ -12,6 +13,7 @@ function Game() {
         score={score}
         step={step}
       />
+      <Question />
     </div>
   );
 }
