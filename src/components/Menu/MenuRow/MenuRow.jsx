@@ -2,7 +2,7 @@ import React from 'react';
 import MenuItem from './../MenuItem/MenuItem';
 import './MenuRow.css';
 
-function MenuRow() {
+function MenuRow({step}) {
   const menuItems = [
     'Разминка',
     'Воробьиные',
@@ -12,15 +12,18 @@ function MenuRow() {
     'Морские птицы',
   ];
 
-  const menuList = menuItems.map((item) =>
-    <MenuItem
+  const menuList = menuItems.map((item, key) => {
+    const isCurrent = step === key + 1 ? true : false;
+
+    return <MenuItem
       name={item}
       key={item.toString()}
+      isCurrent={isCurrent}
     />
-  );
+  });
 
   return (
-    <ul class="menu">{menuList}</ul>
+    <ul className="menu">{menuList}</ul>
   );
 }
 

@@ -3,6 +3,19 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  padding: 5px;
   text-align: center;
+  background: #008966;
+  padding: 8px;
+}
+
+.menu__item:first-child {
+  border-radius: 6px 0px 0px 6px;
+}
+
+.menu__item:last-child {
+  border-radius: 0px 6px 6px 0px;
+}
+
+.menu__item.current {
+  background: #00bc8c;
 }
