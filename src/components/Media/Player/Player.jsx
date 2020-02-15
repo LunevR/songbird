@@ -19,6 +19,10 @@ class Player extends PureComponent {
     this.rewind = this.rewind.bind(this);
   }
 
+  componentWillUnmount() {
+    this.pause();
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.source !== prevProps.source) {
       this.pause();

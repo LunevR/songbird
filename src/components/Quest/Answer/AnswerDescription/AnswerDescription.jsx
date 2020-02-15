@@ -28,9 +28,9 @@ function AnswerDescription({hasAnswer, bird}) {
           </div>
         </div>
 
-        <div class="break"></div>
-        
-        <div class="Answer_description__description">
+        <div className="break"></div>
+
+        <div className="Answer_description__description">
           {bird.description}
         </div>
       </div>
