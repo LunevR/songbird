@@ -1,0 +1,39 @@
+.Answer_item__name {
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.Answer_item {
+  border-bottom: 1px solid #808080;
+}
+
+.Answer_block .Answer_item:last-of-type {
+  border-bottom: none
+}
+
+.Answer_item__status {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.status_default {
+  border: 1px solid #303030;
+  background: #444444;
+}
+
+.status_correct {
+  border: 1px solid #0fdea9;
+  background: #04b084;
+}
+
+.status_incorrect {
+  border: 1px solid #ea200b;
+  background: #d62c1a;
+}
+
+.Answer_item:hover {
+  background: #444444;
+}
