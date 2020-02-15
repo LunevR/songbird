@@ -1,0 +1,34 @@
+.Question__block {
+  width: 100%;
+  display: flex;
+  background: #303030;
+  margin: 20px 0px;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Question__block__image {
+  margin-right: 40px;
+}
+
+.Question__block__image img {
+  border-radius: 5px;
+}
+
+.Question__block__quest {
+  width: 100%;
+}
+
+.Question__block__quest hr {
+  background: #393939;
+  border: 0px;
+  height: 2px;
+}
+
+.Question__block__quest__title {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 600;
+}
