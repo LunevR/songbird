@@ -1,0 +1,36 @@
+.Game_block.Finish_block {
+  flex-direction: column;
+}
+
+.Finish_block__main {
+  margin: auto;
+  font-size: 40px;
+  padding-top: 100px;
+}
+
+.Finish_block__score {
+  margin: auto;
+  font-size: 22px;
+}
+
+button.Restart_level_button {
+  width: 80%;
+  height: 50px;
+  margin: 100px auto;
+  font-size: 30px;
+  background: #008966;
+  border: 0px;
+  cursor:pointer;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button.Restart_level_button:hover {
+  background: #00bc8c;
+}
+
+button.Restart_level_button:focus {
+  background: #00bc8c;
+  outline: none;
+}
