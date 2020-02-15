@@ -6,13 +6,17 @@ import { format, toDate } from 'date-fns';
 class Player extends PureComponent {
   constructor(props) {
     super(props);
+
     this.playerInstance = new Audio(props.source);
+
     this.playerInstance.onloadedmetadata = () => this.setState({
-      duration: this.playerInstance.duration
+      duration: this.playerInstance.duration.toFixed(1)
     });
+
     this.playerInstance.ontimeupdate = () => this.setState({
-      currentTime: this.playerInstance.currentTime
+      currentTime: this.playerInstance.currentTime.toFixed(1)
     });
+
     this.playerInstance.onended = () => this.setState({
       isPlayd: false,
       currentTime: 0,
