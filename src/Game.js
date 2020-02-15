@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import Header from './components/Header/Header';
 import Question from './components/Quest/Question/Question';
 import AnswerList from './components/Quest/Answer/AnswerList/AnswerList';
+import AnswerDescription from './components/Quest/Answer/AnswerDescription/AnswerDescription';
 import './Game.css';
 import defaultBird from './images/default-bird.jpg';
 import birdsData from './files/QuestionsData';
@@ -18,6 +19,8 @@ class Game extends PureComponent {
       correctBird: this.generateQuestion(birdsData[0]),
       answerList: this.generateAnswerList(birdsData[0]),
       localScore: 5,
+      hasAnswer: false,
+      bird: {},
     };
 
     this.generateQuestion = this.generateQuestion.bind(this);
@@ -75,6 +78,13 @@ class Game extends PureComponent {
 
       this.setState({answerList: answerList});
     }
+
+    let answer = this.state.currentPack.find(item => item.id === id);
+
+    this.setState({
+      hasAnswer: true,
+      bird: answer,
+    });
   }
 
   nextLevelHandler() {
@@ -86,6 +96,8 @@ class Game extends PureComponent {
         correctBird: this.generateQuestion(birdsData[this.state.step]),
         answerList: this.generateAnswerList(birdsData[this.state.step]),
         localScore: 5,
+        hasAnswer: false,
+        bird: {},
       });
     }
   }
@@ -106,6 +118,10 @@ class Game extends PureComponent {
           <AnswerList
             answerList={this.state.answerList}
             onClick={this.answerClickHandler}
+          />
+          <AnswerDescription
+            bird={this.state.bird}
+            hasAnswer={this.state.hasAnswer}
           />
         </div>
         <button

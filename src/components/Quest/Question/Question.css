@@ -10,6 +10,9 @@
 
 .Question__block__image img {
   border-radius: 5px;
+  width: 200px;
+  height: 155px;
+  object-fit: cover;
 }
 
 .Question__block__quest {
