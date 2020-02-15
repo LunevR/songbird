@@ -9,7 +9,7 @@ function Header({
 }) {
   return (
     <header>
-      <img src={logo} alt="logo" height="35" />
+      <img src={logo} alt="logo" height="30" />
       <span id="score"> Score: {score}</span>
       <MenuRow step={step}/>
     </header>

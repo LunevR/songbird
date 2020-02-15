@@ -1,13 +1,33 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import './Player.css';
 import 'font-awesome/css/font-awesome.min.css';
 import { format, toDate } from 'date-fns';
 
-class Player extends PureComponent {
+class Player extends Component {
   constructor(props) {
     super(props);
+    this.prepareNewPlayerInstance(props.source);
 
-    this.playerInstance = new Audio(props.source);
+    this.state = {
+      isPlayd: false,
+      duration: 0,
+      currentTime: 0,
+    };
+
+    this.pause = this.pause.bind(this);
+    this.play = this.play.bind(this);
+    this.rewind = this.rewind.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.source !== prevProps.source) {
+      this.pause();
+      this.prepareNewPlayerInstance(this.props.source);
+    }
+  }
+
+  prepareNewPlayerInstance(source) {
+    this.playerInstance = new Audio(source);
 
     this.playerInstance.onloadedmetadata = () => this.setState({
       duration: this.playerInstance.duration.toFixed(1)
@@ -21,16 +41,6 @@ class Player extends PureComponent {
       isPlayd: false,
       currentTime: 0,
     });
-
-    this.state = {
-      isPlayd: false,
-      duration: 0,
-      currentTime: 0,
-    };
-
-    this.pause = this.pause.bind(this);
-    this.play = this.play.bind(this);
-    this.rewind = this.rewind.bind(this);
   }
 
   pause() {
