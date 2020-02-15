@@ -1,4 +1,5 @@
 import React from 'react';
+import Player from './../Media/Player/Player';
 import './Question.css';
 
 function Question() {
@@ -17,12 +18,9 @@ function Question() {
         </div>
         <hr />
         <div className="Question__block__quest__player">
-          <audio controls>
-            <source src="audio/music.ogg" type="audio/ogg; codecs=vorbis" />
-            <source src="audio/music.mp3" type="audio/mpeg" />
-            Тег audio не поддерживается вашим браузером.
-            <a href="audio/music.mp3">Скачайте музыку</a>.
-          </audio>
+          <Player
+            source="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
+          />
         </div>
       </div>
     </div>
