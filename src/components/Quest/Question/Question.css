@@ -1,12 +1,7 @@
 .Question__block {
   width: 100%;
-  display: flex;
-  background: #303030;
   margin: 20px 0px;
-  border-radius: 5px;
   padding: 20px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .Question__block__image {

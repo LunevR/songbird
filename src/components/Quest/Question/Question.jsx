@@ -1,10 +1,10 @@
 import React from 'react';
-import Player from './../Media/Player/Player';
+import Player from './../../Media/Player/Player';
 import './Question.css';
 
 function Question({name, image, audio}) {
   return (
-    <div className="Question__block">
+    <div className="Game_block Question__block">
       <div className="Question__block__image">
         <img
           src={image}
