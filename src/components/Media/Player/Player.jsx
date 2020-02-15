@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './Player.css';
 import 'font-awesome/css/font-awesome.min.css';
 import { format, toDate } from 'date-fns';
 
-class Player extends Component {
+class Player extends PureComponent {
   constructor(props) {
     super(props);
     this.prepareNewPlayerInstance(props.source);

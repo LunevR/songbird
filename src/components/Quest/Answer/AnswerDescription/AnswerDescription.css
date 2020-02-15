@@ -1,0 +1,25 @@
+.Answer_description {
+  flex: 1;
+  margin-left: 20px;
+  border: 1px solid #808080;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.Answer_description .Question__block__image {
+  flex: 1;
+}
+
+.Answer_description .Question__block__quest {
+  flex: 2;
+}
+
+.Answer_description .Question__block__image img {
+  width: 150px;
+  height: 100px;
+}
+
+.Answer_description .audio_player__way {
+  flex: 4;
+}
