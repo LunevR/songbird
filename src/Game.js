@@ -23,6 +23,7 @@ class Game extends PureComponent {
     this.generateQuestion = this.generateQuestion.bind(this);
     this.generateAnswerList = this.generateAnswerList.bind(this);
     this.answerClickHandler = this.answerClickHandler.bind(this);
+    this.nextLevelHandler = this.nextLevelHandler.bind(this);
   }
 
   generateQuestion(currentPack) {
@@ -76,6 +77,19 @@ class Game extends PureComponent {
     }
   }
 
+  nextLevelHandler() {
+    if (this.state.isCorrectAnswer) {
+      this.setState({
+        step: this.state.step + 1,
+        isCorrectAnswer: false,
+        currentPack: birdsData[this.state.step],
+        correctBird: this.generateQuestion(birdsData[this.state.step]),
+        answerList: this.generateAnswerList(birdsData[this.state.step]),
+        localScore: 5,
+      });
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -94,6 +108,11 @@ class Game extends PureComponent {
             onClick={this.answerClickHandler}
           />
         </div>
+        <button
+          className="Next_level_button"
+          disabled={!this.state.isCorrectAnswer}
+          onClick={this.nextLevelHandler}
+        >Следующий уровень</button>
       </div>
     );
   }
